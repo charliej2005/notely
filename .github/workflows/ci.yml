@@ -25,7 +25,7 @@ jobs:
         run: go test ./... -cover
 
       - name: Gosec check
-        run: test -z $(go gosec ./...)
+        run: gosec ./...
   
   style:
     name: Style
@@ -47,4 +47,4 @@ jobs:
         run: test -z $(go fmt ./...)
 
       - name: Check linting
-        run: test -z $(go staticcheck ./...)
+        run: staticcheck ./...
