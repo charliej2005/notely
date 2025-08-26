@@ -38,4 +38,4 @@ jobs:
         run: 'gcloud info'
 
       - name: Submit build to Google Cloud Build
-        run: gcloud builds submit --tag us-central1-docker.pkg.dev/notely-470210/notely-ar-repo/charliej2005/notely:latest --file path/to/Dockerfile path/to/context
+        run: gcloud builds submit --tag us-central1-docker.pkg.dev/notely-470210/notely-ar-repo/charliej2005/notely:latest .
