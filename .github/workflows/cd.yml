@@ -22,21 +22,20 @@ jobs:
         run: ./scripts/buildprod.sh
 
   gcp:
-    name: GCP Auth and Setup
+    name: Google Cloud Platform
     runs-on: ubuntu-latest
 
     steps:
-      - name: Authenticate to Google Cloud
-        id: auth
-        uses: google-github-actions/auth@v2
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v2'
         with:
           credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
-      - name: Set up Cloud SDK
-        uses: google-github-actions/setup-gcloud@v3
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v3'
 
-      - name: Use gcloud CLI
-        run: gcloud info
+      - name: 'Use gcloud CLI'
+        run: 'gcloud info'
 
       - name: Submit build to Google Cloud Build
         run: gcloud builds submit --tag us-central1-docker.pkg.dev/notely-470210/notely-ar-repo/charliej2005/notely:latest .
