@@ -37,8 +37,9 @@ jobs:
     - name: 'Use gcloud CLI'
       run: 'gcloud info'
 
-    - name: Submit build to Google Cloud Build
-      run: gcloud builds submit --tag us-central1-docker.pkg.dev/notely-470210/notely-ar-repo/charliej2005/notely .
-
     - name: List files for debug
       run: ls -l
+
+    - name: Submit build to Google Cloud Build
+      run: gcloud builds submit --tag us-central1-docker.pkg.dev/notely-470210/notely-ar-repo/charliej2005/notely .
+      
